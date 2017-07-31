@@ -1,0 +1,149 @@
+菜品数据库：编号，菜名，价格，剩余数量，评价星级，
+
+Spring Rolls (春卷)
+
+Lobster slices (龙虾片)
+
+Fried Wonton (炸馄饨)
+
+Fried seaweed (炸海带)
+
+Shrimps toast (虾仁吐司)
+
+Shrimps Xiao Mai (虾仁小麦)
+
+Steamed dumplings with vegetables (蔬菜包)
+
+Mais soup (玉米汤)
+
+Wonton soup (馄饨汤)
+
+Hot and sour soup (酸辣汤)
+
+Soya noodles soup with pork (猪肉大豆汤面)
+
+Chicken soup with mushrooms (香菇鸡汤)
+
+Shark fin soup (鱼翅汤)
+
+Crab meat soup with asparagus (芦笋蟹肉汤)
+
+Steamed plain rice (蒸白饭)
+
+Rice with curry sauce (咖哩饭)
+
+Fried cantonese rice (广东炒饭)
+
+Fried rice with chicken (鸡肉炒饭)
+
+Fried rice with shrimps (虾仁炒饭)
+
+Fried rice with pineapple (凤梨炒饭)
+
+Fried noodles soft or crisp (软或脆的炒面)
+
+Soya noodles with meat or vegetables(vegetbles 你这个单词错了)(猪肉或蔬菜大豆面)
+
+Rice noodles with meat or shrimps(猪肉或虾仁米粉)
+
+Rice noodles with meat (猪肉米粉)
+R
+ice noodles with shrimps (虾仁米粉)
+
+Rice dumplings with vegetables (蔬菜粽子)
+
+Fried shrimps (炒虾)
+
+Shrimps with curry sauce (咖喱虾)
+
+Shrimps(hrimps你这个单词错了) with vegetables (蔬菜虾)
+
+Shrimps with chili sauce (辣味虾)
+
+Shrimps with sweet and sour sauce(糖蜡虾)
+
+Cuttle - Fisch, with celery or hot (芹菜或辣味墨鱼)
+
+Imperial fried prawns (帝国炒大虾)
+
+Stewed prawns with soya sauce (红烧对虾)
+
+Prawns in hot plate (烧烤对虾)
+
+Prawns with chili sauce (辣味对虾)
+
+Fried chicken (炸鸡)
+
+Chicken with curry sauce (咖喱鸡肉)
+
+Chicken with lemon sauce (柠檬汁鸡)
+
+Chicken with pineapple (凤梨汁鸡)
+
+Sweet and sour chicken (糖醋鸡)
+
+Chicken with almonds (杏仁鸡)
+
+Chicken with chili sauce (辣酱炒鸡丁)
+
+Chicken with soya sprout (大豆芽炒鸡丁)
+
+Chicken with mushrooms and bamboo (冬菇竹子鸡)
+
+Roasted duck (炒鸭)
+
+Sweet and sour duck(糖醋鸭)
+
+Duck with mushrooms and bamboo (冬菇竹子鸭)
+
+Sweet and sour park (糖醋公园)
+
+Pork with chili sauce (辣椒酱猪肉)
+
+Pork with vegetables (蔬菜炒猪肉)
+
+Pork with mushrooms and bamboo (冬菇竹子猪肉)
+
+Fried pork ribs (炸猪排)
+
+Sweet and sour pork ribs (糖醋猪排)
+
+Beef with curry sauce (咖喱牛肉)
+
+MBeef with vegetables (蔬菜炒牛肉)
+
+Beef with celery (芹菜炒牛肉)
+
+Beef with onions (洋葱炒牛肉)
+
+Beef with green pepper (青椒炒牛肉)
+
+Beef with oyster sauce (蚝油牛肉)
+
+Beef with chili sauce (辣椒酱牛肉)
+
+Beef with mushrooms and bamboo (冬菇竹子牛肉)
+
+Soya sprouts (豆芽)
+
+Steamed vegetables (清蒸蔬菜)
+
+Chinese mushrooms and bamboo(中国冬姑竹子)
+
+Stewed Tau fu (soya cheese) (炖豆腐)
+
+Stewed Tau fu with vegetables (炖豆腐蔬菜)
+
+Cococake (椰香蛋糕)
+
+Soya bean cake (豆饼)
+
+Mixed chinese fruits (水果杂盘)
+
+Ananas, apple and pineapple (fried or candy(kandy是不是candy)(凤梨,苹果和波萝(炸的或冰糖煮的))
+
+Sauce (sweet sour, chili and soya) (调味品(酸甜,辣椒粉和豆酱) )
+
+Wine, beer, soft drink and mineralwater,Chinese tea (葡萄酒,啤酒,汽水和矿泉水,中国茶)
+
+spirit and Sakè (bottle)(烈酒和米酒(瓶装的))
