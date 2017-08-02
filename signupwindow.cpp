@@ -21,7 +21,9 @@ bool signUpWindow::signupCustomer()
     QString tel = ui->telLineEdit->text();
     QString pwd = ui->pwdLineEdit->text();
 
-    QSqlQuery query;
+    QSqlDatabase dbAccount;
+    dbAccount = QSqlDatabase::database("connection1");
+    QSqlQuery query(dbAccount);
     if (tel.length() != 11) {
         QMessageBox::warning(this, "Invalid",
                              "Please enter a valid phone number");

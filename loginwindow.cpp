@@ -20,7 +20,9 @@ bool LoginWindow::verify_customer()
 {
     QString usr = ui->usrLineEdit->text();
     qDebug() << usr;
-    QSqlQuery query;
+    QSqlDatabase dbAccount;
+    dbAccount = QSqlDatabase::database("connection1");
+    QSqlQuery query(dbAccount);
     query.exec(QString("select password from account where username = '%1'").arg(usr));
     query.next();
 
@@ -49,7 +51,10 @@ bool LoginWindow::verify_admin()
 {
     QString usr = ui->usrLineEdit->text();
     qDebug() << usr;
-    QSqlQuery query;
+
+    QSqlDatabase dbAccount;
+    dbAccount = QSqlDatabase::database("connection1");
+    QSqlQuery query(dbAccount);
     query.exec(QString("select password from account where username = '%1'").arg(usr));
     query.next();
 
