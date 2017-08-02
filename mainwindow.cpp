@@ -19,10 +19,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    QSqlDatabase dbMenu;
+    dbMenu = QSqlDatabase::database("connection2");
+    QSqlQuery query(dbMenu);
     QSqlQueryModel *model = new QSqlQueryModel(this);
-    model->setQuery("select * from menu");
+    model->setQuery("select * from menu", dbMenu);
 
-    QSqlQuery query;
     query.exec("select * from menu");
     while(query.next()) {
         int id = query.value(0).toInt();
