@@ -28,18 +28,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     loginwindow.cpp \
-    signupwindow.cpp
+    signupwindow.cpp \
+    menuwindow.cpp
 
 HEADERS  += mainwindow.h \
     loginwindow.h \
     account.h \
     signupwindow.h \
-    menu.h
+    menu.h \
+    menuwindow.h
 
 FORMS    += mainwindow.ui \
     loginwindow.ui \
-    signupwindow.ui
+    signupwindow.ui \
+    menuwindow.ui
 
 DISTFILES += \
     readme.txt \
     menu.txt
+
+RESOURCES += \
+    images.qrc \
+    restaurant.qrc

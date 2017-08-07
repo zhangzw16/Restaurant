@@ -4,31 +4,42 @@
 #include "menu.h"
 #include "loginwindow.h"
 #include "signupwindow.h"
+#include "menuwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    if(!createConnection_forMenu()) return 2;
-    if(!createConnection_forAccount()) return 1;
+    if(!createConnection_forMenu()) return 1;
+//    if(!createConnection_forAccount()) return 1;
 
-    QSqlDatabase dbAccount = QSqlDatabase::database("connection1");
-    QSqlQuery query(dbAccount);
-    query.exec(QString("select password from account where username = '18811029016'"));
-    query.next();
-    QString pwd = query.value(0).toString();
-    qDebug() << pwd;
+//    QSqlDatabase dbAccount = QSqlDatabase::database("connection1");
+//    QSqlQuery query(dbAccount);
+//    query.exec(QString("select password from account where username = '18811029016'"));
+//    query.next();
+//    QString pwd = query.value(0).toString();
+//    qDebug() << pwd;
 
-    LoginWindow lw;
-    signUpWindow suw;
-    lw.show();
-    MainWindow w;
-    //w.show();
+//    LoginWindow lw;
+//    signUpWindow suw;
+//    lw.show();
+//    MainWindow w;
+//    //w.show();
 
-    if (lw.exec() == QDialog::Accepted) {
-        w.show();
-        return a.exec();
-    }
+//    if (lw.exec() == QDialog::Accepted) {
+//        w.show();
+//        return a.exec();
+//    }
+
+
+
+   menuwindow mw;
+   mw.show();
+
+   return a.exec();
+
+
+
 
 //    MainWindow w;
 
