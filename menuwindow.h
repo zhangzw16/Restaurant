@@ -2,7 +2,7 @@
 #define MENUWINDOW_H
 
 #include <QDialog>
-#include <QSqlTableModel>
+#include <QtWidgets>
 #include <QtSql>
 
 namespace Ui {
@@ -19,7 +19,7 @@ public:
 
 private:
     Ui::menuwindow *ui;
-    QSqlTableModel *model;
+    QSqlRelationalTableModel *model;
 };
 
 #endif // MENUWINDOW_H

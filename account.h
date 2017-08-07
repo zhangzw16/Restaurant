@@ -7,6 +7,17 @@
 #include <QString>
 #include <QDebug>
 
+void addAccount(QSqlQuery &q, const QString &username,
+                const QString &password, const int &status) {
+    q.addBindValue(username);
+    q.addBindValue(password);
+    q.addBindValue(status);
+}
+
+void deleteAccount(QSqlQuery &q, const QString &username) {
+    q.exec(QString("delete from account where username = '%1").arg(username));
+}
+
 static bool createConnection_forAccount() { 
     QSqlDatabase db1 = QSqlDatabase::addDatabase("QSQLITE", "connection1");
     QSqlQuery query1(db1);

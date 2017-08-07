@@ -29,14 +29,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     loginwindow.cpp \
     signupwindow.cpp \
-    menuwindow.cpp
+    menuwindow.cpp \
+    menudelegate.cpp
 
 HEADERS  += mainwindow.h \
     loginwindow.h \
     account.h \
     signupwindow.h \
     menu.h \
-    menuwindow.h
+    menuwindow.h \
+    menudelegate.h \
+    tables.h
 
 FORMS    += mainwindow.ui \
     loginwindow.ui \

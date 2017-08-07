@@ -7,6 +7,18 @@
 #include <QString>
 #include <QDebug>
 
+void addDish(QSqlQuery &q, const int &id, const QString &name,
+             const int &price, const int remains, const int rate) {
+    q.addBindValue(id);
+    q.addBindValue(name);
+    q.addBindValue(price);
+    q.addBindValue(remains);
+    q.addBindValue(rate);
+}
+
+void deleteDish(QSqlQuery &q, const int &id) {
+    q.exec(QString("delete from menu where id = '%1").arg(id));
+}
 
 static bool createConnection_forMenu() {
 
@@ -15,10 +27,10 @@ static bool createConnection_forMenu() {
 
     db2.setDatabaseName("menu.db"); //set name
     if(!db2.open()) { //if database failed to open
-//        QMessageBox::critical(0,
-//                              QString("Cannot open database: account"),
-//                              QString("Unable to establish a database connection."),
-//                              QMessageBox::Cancel);
+        QMessageBox::critical(0,
+                              QString("Cannot open database: account"),
+                              QString("Unable to establish a database connection."),
+                              QMessageBox::Cancel);
         return false;
     }
 
