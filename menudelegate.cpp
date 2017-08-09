@@ -12,7 +12,7 @@ MenuDelegate::MenuDelegate(QObject *parent)
 void MenuDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                          const QModelIndex &index) const
 {
-    qDebug() << index.column();
+//    qDebug() << index.column();
     if (index.column() != StarColum) {
         QStyleOptionViewItem opt = option;
         opt.rect.adjust(0, 0, -1, -1);
@@ -25,7 +25,7 @@ void MenuDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         if (option.state & QStyle::State_Selected)
             painter->fillRect(option.rect, option.palette.color(cg, QPalette::Highlight));
         int rating = model->data(index, Qt::DisplayRole).toInt();
-        qDebug() << index;
+//        qDebug() << index;
         int width = star.width();
         int height = star.height();
         int x = option.rect.x();

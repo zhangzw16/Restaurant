@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     loginwindow.cpp \
     signupwindow.cpp \
     menuwindow.cpp \
-    menudelegate.cpp
+    menudelegate.cpp \
+    choosetablewindow.cpp
 
 HEADERS  += mainwindow.h \
     loginwindow.h \
@@ -39,12 +40,14 @@ HEADERS  += mainwindow.h \
     menu.h \
     menuwindow.h \
     menudelegate.h \
-    tables.h
+    tables.h \
+    choosetablewindow.h
 
 FORMS    += mainwindow.ui \
     loginwindow.ui \
     signupwindow.ui \
-    menuwindow.ui
+    menuwindow.ui \
+    choosetablewindow.ui
 
 DISTFILES += \
     readme.txt \

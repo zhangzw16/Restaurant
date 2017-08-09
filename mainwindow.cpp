@@ -4,6 +4,7 @@
 #include <QTableView>
 #include <QSqlQuery>
 #include <QDebug>
+#include "menuwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,16 +20,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QSqlDatabase dbMenu;
-    dbMenu = QSqlDatabase::database("connection2");
-    QSqlQuery query(dbMenu);
-    QSqlQueryModel *model = new QSqlQueryModel(this);
-    model->setQuery("select * from menu", dbMenu);
+//    QSqlDatabase dbMenu;
+//    dbMenu = QSqlDatabase::database("connection2");
+//    QSqlQuery query(dbMenu);
+//    QSqlQueryModel *model = new QSqlQueryModel(this);
+//    model->setQuery("select * from menu", dbMenu);
 
-    model->setHeaderData(0, Qt::Horizontal, "id");
-    model->setHeaderData(1, Qt::Horizontal, "name");
-    model->setHeaderData(2, Qt::Horizontal, "price");
-    QTableView *view = new QTableView;
-    view->setModel(model);
-    view->show();
+//    model->setHeaderData(0, Qt::Horizontal, "id");
+//    model->setHeaderData(1, Qt::Horizontal, "name");
+//    model->setHeaderData(2, Qt::Horizontal, "price");
+//    QTableView *view = new QTableView;
+//    view->setModel(model);
+//    view->show();
+
+    menuwindow mw;
+    mw.show();
+    mw.exec();
 }
