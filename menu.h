@@ -6,19 +6,22 @@
 #include <QSqlQuery>
 #include <QString>
 #include <QDebug>
+#include <QSqlError>
+#include <values.h>
 
-void addDish(QSqlQuery &q, const int &id, const QString &name,
-             const int &price, const int remains, const int rate) {
-    q.addBindValue(id);
-    q.addBindValue(name);
-    q.addBindValue(price);
-    q.addBindValue(remains);
-    q.addBindValue(rate);
-}
+//void addDish(QSqlQuery &q, const int &id, const QString &name,
+//             const int &price, const int remains, const int rate) {
+//    q.addBindValue(id);
+//    q.addBindValue(name);
+//    q.addBindValue(price);
+//    q.addBindValue(remains);
+//    q.addBindValue(rate);
+//}
 
-void deleteDish(QSqlQuery &q, const int &id) {
-    q.exec(QString("delete from menu where id = '%1").arg(id));
-}
+//void deleteDish(QSqlQuery &q, const int &id) {
+//    q.exec(QString("delete from menu where id = '%1").arg(id));
+//}
+
 
 static bool createConnection_forMenu() {
 
@@ -40,6 +43,8 @@ static bool createConnection_forMenu() {
                "price int,"
                "remains int,"
                "rate int)");
+
+    qDebug() << query2.lastError();
 //    rate for 评价；remains for 剩余的数量；
 
     query2.exec("insert into menu values(1, 'Spring Rolls', 5, 100, 5)");
@@ -57,8 +62,19 @@ static bool createConnection_forMenu() {
         int id = query2.value(0).toInt();
         QString name = query2.value(1).toString();
         int price = query2.value(2).toInt();
+        menuNum++;
         qDebug() << id << name << price << endl;
+//        qDebug() << menuNum;
     }
+
+    for (int i=1; i<=menuNum; i++) {
+        query2.exec(QString("select name from menu where id = %1").arg(i));
+        query2.next();
+        QString menuThis = query2.value(0).toString();
+        menuList.append(menuThis);
+    }
+    qDebug() << menuList;
+
     return true;
 }
 

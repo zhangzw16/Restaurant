@@ -2,6 +2,8 @@
 #include "signupwindow.h"
 #include "ui_loginwindow.h"
 #include "account.h"
+#include "mainwindow.h"
+#include "choosetablewindow.h"
 #include <QDebug>
 
 LoginWindow::LoginWindow(QWidget *parent) :
@@ -93,16 +95,23 @@ void LoginWindow::on_signUpBtn_clicked()
 void LoginWindow::on_signInBtn_customer_clicked()
 {
     if(verify_customer()) {
+        usrnameA = ui->usrLineEdit->text();
         this->hide();
         accept();
+//        chooseTableWindow ctw;
+//        ctw.show();
+//        ctw.exec();
     }
 }
 
 void LoginWindow::on_signInBtn_admin_clicked()
 {
-    if(verify_admin()) {
-        this->hide();
-        accept();
-        //mw.exec();
-    }
+//    if(verify_admin()) {
+//        this->hide();
+//        accept();
+//        //mw.exec();
+//    }
+
+    MainWindow mw;
+    mw.show();
 }

@@ -15,11 +15,19 @@ class menuwindow : public QDialog
 
 public:
     explicit menuwindow(QWidget *parent = 0);
+    int getTableId();
+    int getDishId();
     ~menuwindow();
+
+private slots:
+    void on_commitBtn_clicked();
+
+    void on_toTheCartBtn_clicked();
 
 private:
     Ui::menuwindow *ui;
     QSqlRelationalTableModel *model;
+    QSqlRelationalTableModel *modelTables;
 };
 
 #endif // MENUWINDOW_H
