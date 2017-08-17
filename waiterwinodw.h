@@ -18,6 +18,8 @@ public:
 private slots:
     void on_editMenuBtn_clicked();
 
+    void on_editAccountBtn_clicked();
+
 private:
     Ui::WaiterWinodw *ui;
 };

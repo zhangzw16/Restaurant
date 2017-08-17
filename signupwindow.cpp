@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include "account.h"
 #include "loginwindow.h"
+#include <QDebug>
+#include <QSqlError>
 
 signUpWindow::signUpWindow(QWidget *parent) :
     QDialog(parent),
@@ -29,14 +31,15 @@ bool signUpWindow::signupCustomer()
                              "Please enter a valid phone number");
         return false;
     }
-    query.exec(QString("insert into account values(%1, %2, 1)").arg(tel).arg(pwd));
+    query.exec(QString("insert into account values('%1', '%2', 1)").arg(tel).arg(pwd));
+    qDebug() << "sign up" << query.lastError();
     return true;
 }
 
 void signUpWindow::on_okBtn_clicked()
 {
     if (signupCustomer()) {
-        this->hide();
+        this->close();
         LoginWindow lw;
         lw.show();
         lw.exec();
@@ -46,7 +49,7 @@ void signUpWindow::on_okBtn_clicked()
 
 void signUpWindow::on_backToLoginBtn_clicked()
 {
-    this->hide();
+    this->close();
     LoginWindow lw;
     lw.show();
     lw.exec();

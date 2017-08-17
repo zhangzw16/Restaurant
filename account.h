@@ -16,9 +16,9 @@
 //    q.addBindValue(status);
 //}
 
-//void deleteAccount(QSqlQuery &q, const QString &username) {
-//    q.exec(QString("delete from account where username = '%1").arg(username));
-//}
+static void deleteAccount(QSqlQuery &q, const QString &username) {
+    q.exec(QString("delete from account where username = '%1'").arg(username));
+}
 
 static bool createConnection_forAccount() { 
     QSqlDatabase db1 = QSqlDatabase::addDatabase("QSQLITE", "connection1");

@@ -31,10 +31,10 @@ SOURCES += main.cpp\
     signupwindow.cpp \
     menuwindow.cpp \
     menudelegate.cpp \
-    choosetablewindow.cpp \
     checkbillwindow.cpp \
     starratedishwindow.cpp \
-    waiterwinodw.cpp
+    waiterwinodw.cpp \
+    editaccountwindow.cpp
 
 HEADERS  += mainwindow.h \
     loginwindow.h \
@@ -44,24 +44,25 @@ HEADERS  += mainwindow.h \
     menuwindow.h \
     menudelegate.h \
     tables.h \
-    choosetablewindow.h \
     values.h \
     checkbillwindow.h \
     starratedishwindow.h \
-    waiterwinodw.h
+    waiterwinodw.h \
+    editaccountwindow.h
 
 FORMS    += mainwindow.ui \
     loginwindow.ui \
     signupwindow.ui \
     menuwindow.ui \
-    choosetablewindow.ui \
     checkbillwindow.ui \
     starratedishwindow.ui \
-    waiterwinodw.ui
+    waiterwinodw.ui \
+    editaccountwindow.ui
 
 DISTFILES += \
     readme.txt \
-    menu.txt
+    menu.txt \
+    Bugs.txt
 
 RESOURCES += \
     images.qrc \

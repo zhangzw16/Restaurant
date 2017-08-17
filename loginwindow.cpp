@@ -43,18 +43,22 @@ LoginWindow::~LoginWindow()
 bool LoginWindow::verify_customer()
 {
     QString usr = ui->usrLineEdit->text();
-    qDebug() << usr;
+    if (usr == NULL) {
+        QMessageBox::warning(this, QString("Warning!"),
+                             "Username can not be empty");
+        ui->usrLineEdit->setFocus();
+        return false;
+    }
+
     QSqlDatabase dbAccount;
     dbAccount = QSqlDatabase::database("connection1");
     QSqlQuery query(dbAccount);
     query.exec(QString("select password from account where username = '%1'").arg(usr));
     query.next();
-
     QString pwd = query.value(0).toString();
-    qDebug() << pwd;
-
-    query.exec(QString("select status from account where username = '%1'").arg(usr));
-    query.next();
+    qDebug() << "loginAsCostomer" << pwd;
+//    query.exec(QString("select status from account where username = '%1'").arg(usr));
+//    query.next();
     //int status = query.value(0).toInt();
     //if (status != 0) return false;
 
@@ -74,7 +78,12 @@ bool LoginWindow::verify_customer()
 bool LoginWindow::verify_admin()
 {
     QString usr = ui->usrLineEdit->text();
-    qDebug() << usr;
+    if (usr == NULL) {
+        QMessageBox::warning(this, QString("Warning!"),
+                             "Username can not be empty");
+        ui->usrLineEdit->setFocus();
+        return false;
+    }
 
     QSqlDatabase dbAccount;
     dbAccount = QSqlDatabase::database("connection1");
@@ -130,30 +139,32 @@ void LoginWindow::on_signInBtn_customer_clicked()
 //        ctw.exec();
 //    }
 
-    QString usrnameA = ui->usrLineEdit->text();
-    QMessageBox checkTableMessageBox(this);
-    QAbstractButton *confirmButton =
-            checkTableMessageBox.addButton("确认", QMessageBox::ActionRole);
-    QAbstractButton *cancelButton =
-            checkTableMessageBox.addButton("取消", QMessageBox::ActionRole);
-    checkTableMessageBox.setText(QString("目前可用餐的餐桌数为: %1").arg(getTableNum()));
-    checkTableMessageBox.exec();
+    if (verify_customer()) {
+        QString usrnameA = ui->usrLineEdit->text();
+        QMessageBox checkTableMessageBox(this);
+        QAbstractButton *confirmButton =
+                checkTableMessageBox.addButton("确认", QMessageBox::ActionRole);
+        QAbstractButton *cancelButton =
+                checkTableMessageBox.addButton("取消", QMessageBox::ActionRole);
+        checkTableMessageBox.setText(QString("目前可用餐的餐桌数为: %1").arg(getTableNum()));
+        checkTableMessageBox.exec();
 
-    if (checkTableMessageBox.clickedButton() == confirmButton) {
-        QSqlDatabase dbTables = QSqlDatabase::database("connection3");
-        QSqlQuery query(dbTables);
-        if (!availableTableNum > 0) {
-            //如果没有桌子显示错误提示
-            QMessageBox::warning(this, "No table available!",
-                                 "There is no table left. Please wait for some time");
-        } else {
-            //如果有空桌子，分配排序最前面的桌子，并进入主界面
-            query.exec(QString("update diningTables set user = %1 where id = %2").arg(usrnameA).arg(tableList[0]));
-            qDebug() << query.lastError();
-            tableId = tableList[0];
-            qDebug() << tableId;
-            this->hide();
-            accept();
+        if (checkTableMessageBox.clickedButton() == confirmButton) {
+            QSqlDatabase dbTables = QSqlDatabase::database("connection3");
+            QSqlQuery query(dbTables);
+            if (!availableTableNum > 0) {
+                //如果没有桌子显示错误提示
+                QMessageBox::warning(this, "No table available!",
+                                     "There is no table left. Please wait for some time");
+            } else {
+                //如果有空桌子，分配排序最前面的桌子，并进入主界面
+                query.exec(QString("update diningTables set user = %1 where id = %2").arg(usrnameA).arg(tableList[0]));
+                qDebug() << query.lastError();
+                tableId = tableList[0];
+                qDebug() << tableId;
+                this->hide();
+                accept();
+            }
         }
     }
 }
