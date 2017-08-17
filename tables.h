@@ -106,6 +106,14 @@ static void deleteTable(QSqlQuery &q, const int &id) {
     q.exec(QString("delete from diningTables where id = '%1").arg(id));
 }
 
-
+static QList<int> getQuantityList(QSqlQuery &q, const int &id) {
+    QList<int> quantityList;
+    for (int i=1; i<=13; i++) {
+        q.exec(QString("select dish%1 from diningTables where id = %2").arg(i).arg(id));
+        q.next();
+        quantityList.append(q.value(0).toInt());
+    }
+    return quantityList;
+}
 
 #endif // TABLES_H

@@ -210,10 +210,10 @@
     <widget class="QTableView" name="tablesTable">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
+       <x>0</x>
+       <y>40</y>
        <width>1111</width>
-       <height>201</height>
+       <height>171</height>
       </rect>
      </property>
      <property name="minimumSize">

@@ -7,7 +7,7 @@
 #include <QString>
 #include <QDebug>
 
-static QString usrnameA;
+//static QString usrnameA;
 
 //void addAccount(QSqlQuery &q, const QString &username,
 //                const QString &password, const int &status) {

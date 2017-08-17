@@ -5,8 +5,9 @@
 #include "mainwindow.h"
 #include <QtWidgets>
 #include <QMessageBox>
+#include "values.h"
 
-QList<int> tableList;
+//QList<int> tableList;
 
 chooseTableWindow::chooseTableWindow(QWidget *parent) :
     QDialog(parent),
@@ -33,7 +34,7 @@ int chooseTableWindow::getAvaliableTableNum()
             qDebug() << tableList;
         }
     }
-    qDebug() << availableTables;
+    qDebug() << availableTables << endl;
     return availableTables;
 }
 
@@ -44,13 +45,15 @@ chooseTableWindow::~chooseTableWindow()
 
 void chooseTableWindow::on_pushButton_clicked()
 {
+    //如果有座位的话，分配一个排序最前de座位
     QSqlDatabase dbTables = QSqlDatabase::database("connection3");
     QSqlQuery query(dbTables);
     if (!availableTables > 0) {
         QMessageBox::warning(this, "No table available!",
                              "There is no table left. Please wait for some time");
     } else {
-        query.exec(QString("update tables set usrname = %1 where id = %2").arg(usrnameA).arg(tableList[0]));
+//        query.exec(QString("update tables set usrname = %1 where id = %2").arg(usrnameA).arg(tableList[0]));
+        tableId = tableList[0];
         this->hide();
         MainWindow mw;
         mw.show();

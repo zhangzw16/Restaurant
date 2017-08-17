@@ -12,6 +12,9 @@
 QStringList menuList;
 int menuNum = 0;
 int tablesNum = 10;
+int tableId = 0;
+int availableTableNum = 0;
+QList<int> tableList;
 
 int main(int argc, char *argv[])
 {
@@ -21,21 +24,13 @@ int main(int argc, char *argv[])
     if(!createConnection_forAccount()) return 1;
     if(!createConnection_forTables()) return 1;
 
-    QSqlDatabase dbAccount = QSqlDatabase::database("connection1");
-    QSqlQuery query(dbAccount);
-    query.exec(QString("select password from account where username = '18811029016'"));
-    query.next();
-    QString pwd = query.value(0).toString();
-    qDebug() << pwd;
-
     LoginWindow lw;
-    signUpWindow suw;
-    menuwindow mw;
     lw.show();
-    MainWindow w;
+//    MainWindow w;
     //w.show();
 
     if (lw.exec() == QDialog::Accepted) {
+        MainWindow w;
         w.show();
         return a.exec();
     }

@@ -31,7 +31,10 @@ SOURCES += main.cpp\
     signupwindow.cpp \
     menuwindow.cpp \
     menudelegate.cpp \
-    choosetablewindow.cpp
+    choosetablewindow.cpp \
+    checkbillwindow.cpp \
+    starratedishwindow.cpp \
+    waiterwinodw.cpp
 
 HEADERS  += mainwindow.h \
     loginwindow.h \
@@ -42,13 +45,19 @@ HEADERS  += mainwindow.h \
     menudelegate.h \
     tables.h \
     choosetablewindow.h \
-    values.h
+    values.h \
+    checkbillwindow.h \
+    starratedishwindow.h \
+    waiterwinodw.h
 
 FORMS    += mainwindow.ui \
     loginwindow.ui \
     signupwindow.ui \
     menuwindow.ui \
-    choosetablewindow.ui
+    choosetablewindow.ui \
+    checkbillwindow.ui \
+    starratedishwindow.ui \
+    waiterwinodw.ui
 
 DISTFILES += \
     readme.txt \

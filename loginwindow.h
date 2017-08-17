@@ -13,6 +13,7 @@ class LoginWindow : public QDialog
 
 public:
     explicit LoginWindow(QWidget *parent = 0);
+    static int getTableNum();
     ~LoginWindow();
 
 private slots:

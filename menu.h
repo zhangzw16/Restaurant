@@ -78,4 +78,15 @@ static bool createConnection_forMenu() {
     return true;
 }
 
+static QList<int> getPriceList(QSqlQuery &q) {
+    QList<int> priceList;
+    for (int i=1; i<=menuList.length(); i++) {
+        q.exec(QString("select price from menu where id = %1").arg(i));
+        q.next();
+//        qDebug() << q.lastError();
+        priceList.append(q.value(0).toInt());
+    }
+    return priceList;
+}
+
 #endif // MENU_H

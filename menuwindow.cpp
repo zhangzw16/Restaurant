@@ -57,7 +57,8 @@ menuwindow::menuwindow(QWidget *parent) :
     modelTables->setEditStrategy(QSqlTableModel::OnManualSubmit);
 
     for (int i=0; i<menuList.length(); i++) {
-        modelTables->setHeaderData(modelTables->fieldIndex(QString("dish%1").arg(i+1)), Qt::Horizontal, menuList[i]);
+        modelTables->setHeaderData(modelTables->fieldIndex(QString("dish%1").arg(i+1)),
+                                   Qt::Horizontal, menuList[i]);
     }
     if (!modelTables->select()) {
         qDebug() << modelTables->lastError();
@@ -78,7 +79,7 @@ menuwindow::menuwindow(QWidget *parent) :
 
 int menuwindow::getTableId()
 {
-    return 0;
+    return tableId;
 }
 
 int menuwindow::getDishId()
@@ -99,6 +100,7 @@ menuwindow::~menuwindow()
 void menuwindow::on_commitBtn_clicked()
 {
     modelTables->submitAll();
+    this->close();
 }
 
 void menuwindow::on_toTheCartBtn_clicked()

@@ -18,6 +18,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_checkBillBtn_clicked();
+
+    void on_starrateBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
