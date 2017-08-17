@@ -6,11 +6,17 @@
 #include <QDebug>
 #include <QSqlError>
 
-signUpWindow::signUpWindow(QWidget *parent) :
+signUpWindow::signUpWindow(QWidget *parent, int statusSum) :
     QDialog(parent),
-    ui(new Ui::signUpWindow)
+    ui(new Ui::signUpWindow),
+    statusSum(statusSum)
 {
     ui->setupUi(this);
+    QStringList comboBoxList;
+    for (int i=0; i<statusSum; i++) {
+        comboBoxList.append(QString("%1").arg(i));
+    }
+    ui->statusComboBox->insertItems(0, comboBoxList);
 }
 
 signUpWindow::~signUpWindow()
@@ -22,6 +28,8 @@ bool signUpWindow::signupCustomer()
 {
     QString tel = ui->telLineEdit->text();
     QString pwd = ui->pwdLineEdit->text();
+    int status = ui->statusComboBox->currentData().toInt();
+//    ui->statusComboBox->setCursor();
 
     QSqlDatabase dbAccount;
     dbAccount = QSqlDatabase::database("connection1");
@@ -31,19 +39,25 @@ bool signUpWindow::signupCustomer()
                              "Please enter a valid phone number");
         return false;
     }
-    query.exec(QString("insert into account values('%1', '%2', 1)").arg(tel).arg(pwd));
+    query.exec(QString("insert into account values('%1', '%2', %3)").arg(tel).arg(pwd).arg(status));
     qDebug() << "sign up" << query.lastError();
     return true;
 }
 
 void signUpWindow::on_okBtn_clicked()
 {
-    if (signupCustomer()) {
-        this->close();
-        LoginWindow lw;
-        lw.show();
-        lw.exec();
+    if (statusSum == 1) {
+        if (signupCustomer()) {
+            this->close();
+            LoginWindow lw;
+            lw.show();
+            lw.exec();
+        }
+    } else {
+        if (signupCustomer())
+            this->close();
     }
+
 
 }
 

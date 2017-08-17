@@ -42,7 +42,9 @@ static bool createConnection_forAccount() {
                "username varchar(20) PRIMARY KEY,"
                "password varchar(20),"
                "status int)");
-//    status '0 for admin', '1 for customer'
+//    origin::status '0 for admin', '1 for customer'
+//    now::status '0 for customer', '1 for waiter', '2 for cook', '3 for supervisor'
+
 //    query.exec("delete from account where username = 'admin'");
 //    query.exec("select * from account where username = 'admin'");
 //    qDebug() << query.next();

@@ -21,6 +21,10 @@ private slots:
 
     void on_deleteAccountBtn_clicked();
 
+    void on_addAccountBtn_clicked();
+
+    void on_comboBox_activated(const QString &arg1);
+
 private:
     Ui::editAccountWindow *ui;
     QSqlRelationalTableModel *model;

@@ -110,7 +110,7 @@ bool LoginWindow::verify_admin()
     }
 
     //如果不是管理人员，返回错误
-    else if (status != 0) {
+    else if (status == 0) {
         QMessageBox::warning(this,QString("Warning!"),
                              "You are not a supervisor");
         return false;

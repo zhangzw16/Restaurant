@@ -39,15 +39,15 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>571</width>
-      <height>421</height>
+      <width>601</width>
+      <height>531</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="deleteAccountBtn">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>130</y>
       <width>151</width>
       <height>131</height>
@@ -60,7 +60,7 @@
    <widget class="QPushButton" name="addAccountBtn">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>280</y>
       <width>151</width>
       <height>131</height>
@@ -73,7 +73,7 @@
    <widget class="QPushButton" name="submitBtn">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>430</y>
       <width>151</width>
       <height>131</height>
@@ -86,7 +86,7 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>40</y>
       <width>151</width>
       <height>71</height>
@@ -110,17 +110,17 @@
     </item>
     <item>
      <property name="text">
-      <string>ADMIN</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
       <string>WAITER</string>
      </property>
     </item>
     <item>
      <property name="text">
       <string>COOK</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ADMIN</string>
      </property>
     </item>
    </widget>
