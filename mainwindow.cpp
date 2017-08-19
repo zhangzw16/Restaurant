@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->showTableId->setText(QString("%1").arg(tableId));
+    setWindowIcon(QIcon(QStringLiteral(":/images/ideas.png")));
 }
 
 MainWindow::~MainWindow()

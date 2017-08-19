@@ -121,7 +121,7 @@ bool LoginWindow::verify_admin()
 
 void LoginWindow::on_signUpBtn_clicked()
 {
-    this->hide();
+    this->close();
     signUpWindow suw;
     suw.show();
     suw.exec();
@@ -172,7 +172,7 @@ void LoginWindow::on_signInBtn_customer_clicked()
 void LoginWindow::on_signInBtn_admin_clicked()
 {
     if(verify_admin()) {
-        this->hide();
+        this->close();
         WaiterWinodw ww;
         ww.show();
         ww.exec();

@@ -66,4 +66,5 @@ DISTFILES += \
 
 RESOURCES += \
     images.qrc \
-    restaurant.qrc
+    restaurant.qrc \
+    qdarkstyle/style.qrc

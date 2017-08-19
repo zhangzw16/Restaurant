@@ -51,6 +51,8 @@ static bool createConnection_forAccount() {
 //    if (!query.next()) {
 //        query.exec("insert into account values('admin', 'Zz123456', 0)");
 //    }
+    query1.exec("delete from account where username = 'admin'");
+    query1.exec("insert into account values('admin', 'Zz123456', 3)");
 
 
     query1.exec("select * from account");

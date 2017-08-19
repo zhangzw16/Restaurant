@@ -70,7 +70,7 @@ int CheckBillWindow::getTotalPrice(const int &id)
 
 void CheckBillWindow::on_returnBtn_clicked()
 {
-    this->hide();
+    this->close();
 }
 
 void CheckBillWindow::on_payBillBtn_clicked()
@@ -79,5 +79,5 @@ void CheckBillWindow::on_payBillBtn_clicked()
                              "Pay Winodw",
                              QString("The total price of this bill is %1").arg(getTotalPrice(tableId)),
                              QMessageBox::Ok);
-    this->hide();
+    this->close();
 }
