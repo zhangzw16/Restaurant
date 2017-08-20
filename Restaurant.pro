@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     checkbillwindow.cpp \
     starratedishwindow.cpp \
     waiterwinodw.cpp \
-    editaccountwindow.cpp
+    editaccountwindow.cpp \
+    edittableswindow.cpp
 
 HEADERS  += mainwindow.h \
     loginwindow.h \
@@ -48,7 +49,8 @@ HEADERS  += mainwindow.h \
     checkbillwindow.h \
     starratedishwindow.h \
     waiterwinodw.h \
-    editaccountwindow.h
+    editaccountwindow.h \
+    edittableswindow.h
 
 FORMS    += mainwindow.ui \
     loginwindow.ui \
@@ -57,7 +59,8 @@ FORMS    += mainwindow.ui \
     checkbillwindow.ui \
     starratedishwindow.ui \
     waiterwinodw.ui \
-    editaccountwindow.ui
+    editaccountwindow.ui \
+    edittableswindow.ui
 
 DISTFILES += \
     readme.txt \

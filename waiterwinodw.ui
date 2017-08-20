@@ -22,23 +22,23 @@
   <widget class="QPushButton" name="editMenuBtn">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>150</y>
-     <width>241</width>
-     <height>161</height>
+     <x>20</x>
+     <y>20</y>
+     <width>191</width>
+     <height>131</height>
     </rect>
    </property>
    <property name="text">
-    <string>修改菜单</string>
+    <string>修改点单</string>
    </property>
   </widget>
   <widget class="QPushButton" name="editAccountBtn">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>330</y>
-     <width>241</width>
-     <height>161</height>
+     <x>20</x>
+     <y>160</y>
+     <width>191</width>
+     <height>131</height>
     </rect>
    </property>
    <property name="text">
@@ -66,6 +66,81 @@
      <width>81</width>
      <height>51</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="editTablesBtn">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>300</y>
+     <width>191</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>餐桌管理</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="editOriginMenuBtn">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>440</y>
+     <width>191</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>菜单管理</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>243</x>
+     <y>109</y>
+     <width>511</width>
+     <height>231</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="previousMessageBtn">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>370</y>
+     <width>141</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>显示上一条</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="finishBtn">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>370</y>
+     <width>191</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>完成</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nextMessageBtn">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>370</y>
+     <width>141</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>显示下一条</string>
    </property>
   </widget>
  </widget>

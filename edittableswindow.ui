@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>editAccountWindow</class>
- <widget class="QDialog" name="editAccountWindow">
+ <class>editTablesWindow</class>
+ <widget class="QDialog" name="editTablesWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -9,6 +9,12 @@
     <width>800</width>
     <height>600</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
@@ -28,18 +34,6 @@
      <height>571</height>
     </rect>
    </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>16777215</height>
-    </size>
-   </property>
    <property name="title">
     <string>Account</string>
    </property>
@@ -56,7 +50,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="deleteAccountBtn">
+   <widget class="QPushButton" name="deleteTableBtn">
     <property name="geometry">
      <rect>
       <x>620</x>
@@ -69,7 +63,7 @@
      <string>删除</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="addAccountBtn">
+   <widget class="QPushButton" name="addTableBtn">
     <property name="geometry">
      <rect>
       <x>620</x>

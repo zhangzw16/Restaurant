@@ -7,6 +7,7 @@
 #include <QString>
 #include <QDebug>
 #include <QSqlError>
+#include "values.h"
 
 //static void addTable(QSqlQuery &q, int &id, QString &waiter,
 //              QString &user, int &dish1, int &dish2,
@@ -79,6 +80,7 @@ static bool createConnection_forTables() {
 //    qDebug() << query.lastError();
     query.exec("select * from diningTables");
     while(query.next()) {
+        tablesNum++;
         int id = query.value(0).toInt();
         QString waiter = query.value(1).toString();
         QString usrname = query.value(2).toString();
@@ -103,7 +105,9 @@ static bool createConnection_forTables() {
 }
 
 static void deleteTable(QSqlQuery &q, const int &id) {
-    q.exec(QString("delete from diningTables where id = '%1").arg(id));
+    q.exec(QString("delete from diningTables where id = %1").arg(id));
+//    qDebug() << QString("delete from diningTables where id = %1").arg(id);
+    qDebug() << "deleteTable" << q.lastError();
 }
 
 static QList<int> getQuantityList(QSqlQuery &q, const int &id) {
@@ -114,6 +118,13 @@ static QList<int> getQuantityList(QSqlQuery &q, const int &id) {
         quantityList.append(q.value(0).toInt());
     }
     return quantityList;
+}
+
+static void addTable(QSqlQuery &q) {
+    int nextTableId = tablesNum + 1;
+    q.exec(QString("insert into diningTables values(%1, '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)").arg(nextTableId));
+    tablesNum++;
+    qDebug() << "addTable" << q.lastError();
 }
 
 #endif // TABLES_H

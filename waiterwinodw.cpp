@@ -4,6 +4,7 @@
 #include "values.h"
 #include "menuwindow.h"
 #include "editaccountwindow.h"
+#include "edittableswindow.h"
 
 WaiterWinodw::WaiterWinodw(QWidget *parent) :
     QDialog(parent),
@@ -30,4 +31,11 @@ void WaiterWinodw::on_editAccountBtn_clicked()
     editAccountWindow eaw;
     eaw.show();
     eaw.exec();
+}
+
+void WaiterWinodw::on_editTablesBtn_clicked()
+{
+    editTablesWindow etw;
+    etw.show();
+    etw.exec();
 }

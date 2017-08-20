@@ -11,7 +11,7 @@
 
 QStringList menuList;
 int menuNum = 0;
-int tablesNum = 10;
+int tablesNum = -1; //在tables.h中累加，因为有第零桌所以从-1开始加
 int tableId = 0;
 int availableTableNum = 0;
 QList<int> tableList;
